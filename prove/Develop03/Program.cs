@@ -43,9 +43,10 @@ public class Program
     Console.WriteLine("Welcome to the Scripture Memorization Program!");
     Console.WriteLine("Let's work on memorizing some scriptures.");
     Console.WriteLine();
+    //Exceeding Requirements
     Console.WriteLine("Press F to toggle fullscreen mode.");
     Console.WriteLine("Press ESC to exit fullscreen mode.");
-    DisplayMemorizationTips(); // Display memorization tips
+    DisplayMemorizationTips(); //Exceeding Requirements Display memorization tips
     Console.WriteLine();
 }
     private static void DisplayMemorizationTips()
