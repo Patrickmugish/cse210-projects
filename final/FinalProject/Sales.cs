@@ -1,15 +1,18 @@
+// Sale.cs
 using System;
 
 public class Sale
 {
-    // Member Variables
-    public DateTime Timestamp { get; set; }
+    public int ProductId { get; set; }
     public int QuantitySold { get; set; }
+    public DateTime SaleDate { get; set; }
+    public string ProductName { get; set; }
 
-    // Constructor
-    public Sale(DateTime timestamp, int quantitySold)
+    public Sale(int productId, int quantitySold, string productName)
     {
-        Timestamp = timestamp;
+        ProductId = productId;
         QuantitySold = quantitySold;
+        SaleDate = DateTime.Now;
+        ProductName = productName;
     }
 }

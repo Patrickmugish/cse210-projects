@@ -1,31 +1,55 @@
+// Inventory.cs
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Inventory
 {
-    // Member Variables
-    public List<Product> Products { get; set; }
+    private List<Product> products;
+    private List<Sale> sales;
 
-    // Constructor
     public Inventory()
     {
-        Products = new List<Product>();
+        products = new List<Product>();
+        sales = new List<Sale>();
     }
 
-    // Behaviors
-    public void AddProduct(Product product, int initialQuantity)
+    public void AddProduct(Product product)
     {
-        Products.Add(product);
-        product.AddToInventory(initialQuantity);
+        products.Add(product);
     }
 
-    public void UpdateProduct(Product product)
+    public Product GetProductById(int id)
     {
-        // Implementation to update product details
+        foreach (Product product in products)
+        {
+            if (product.ID == id)
+            {
+                return product;
+            }
+        }
+        return null; // Product not found
     }
 
-    public void AdjustInventory(Product product, int quantity)
+    public void RecordSale(Sale sale)
     {
-        // Implementation to adjust inventory levels
+        sales.Add(sale);
+    }
+
+    public List<Product> GetAllProducts()
+    {
+        return products;
+    }
+
+    public List<Sale> GetSales()
+    {
+        return sales;
+    }
+
+    public List<Product> GetPopularProducts()
+    {
+        // Get products with highest sales count
+        int maxSalesCount = products.Max(p => p.SalesCount);
+        return products.Where(p => p.SalesCount == maxSalesCount).ToList();
     }
 }

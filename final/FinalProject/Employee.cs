@@ -1,27 +1,12 @@
 // Employee.cs
-using System;
-
 public class Employee
 {
-    // Member Variables
-    private string name;
-    private string role;
+    public string Name { get; private set; }
+    public int EmployeeID { get; private set; }
 
-    // Constructor
-    public Employee(string name, string role)
+    public Employee(string name, int employeeID)
     {
-        this.name = name;
-        this.role = role;
-    }
-
-    // Properties
-    public string Name
-    {
-        get { return name; }
-    }
-
-    public string Role
-    {
-        get { return role; }
+        Name = name;
+        EmployeeID = employeeID;
     }
 }
